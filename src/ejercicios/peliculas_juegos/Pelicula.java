@@ -1,47 +1,27 @@
 package ejercicios.peliculas_juegos;
 
-public class Pelicula {
-    private String titulo;
-    private int duracion;
-    private boolean estatus;
-    private String genero;
+public class Pelicula extends Produccion {
+
+    private GeneroPeliculas genero;
     private String director;
 
     public Pelicula(){}
-
     public Pelicula(String titulo, String director) {
-        this.titulo = titulo;
+        super(titulo);
         this.director = director;
     }
 
-    public Pelicula(String titulo, int duracion, String genero, String director) {
-        this.titulo = titulo;
-        this.duracion = duracion;
+    public Pelicula(String titulo, int duracion, GeneroPeliculas genero, String director) {
+        super(titulo, duracion);
         this.genero = genero;
         this.director = director;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public int getDuracion() {
-        return duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
-    }
-
-    public String getGenero() {
+    public GeneroPeliculas getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(GeneroPeliculas genero) {
         this.genero = genero;
     }
 
@@ -51,16 +31,5 @@ public class Pelicula {
 
     public void setDirector(String director) {
         this.director = director;
-    }
-
-    @Override
-    public String toString() {
-        return "Pelicula{" +
-                "titulo='" + titulo + '\'' +
-                ", duracion=" + duracion +
-                ", estatus=" + estatus +
-                ", genero='" + genero + '\'' +
-                ", director='" + director + '\'' +
-                '}';
     }
 }
