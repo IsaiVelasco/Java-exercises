@@ -2,17 +2,22 @@ package ejercicios.peliculas_juegos;
 
 public class Produccion implements Activar {
     private String titulo;
-    private int duracion = 2;
-    private boolean estatus = false;
+    private int duracion;
+    private boolean estatus;
 
-    public Produccion(){}
+    public Produccion(){
+        this.duracion = 2;
+        this.estatus = false;
+    }
     public Produccion(String titulo) {
         this.titulo = titulo;
+        this.estatus = false;
     }
 
     public Produccion(String titulo, int duracion) {
         this.titulo = titulo;
         this.duracion = duracion;
+        this.estatus = false;
     }
 
     public Produccion(String titulo, int duracion, boolean estatus) {
@@ -57,7 +62,17 @@ public class Produccion implements Activar {
     }
 
     @Override
-    public boolean compareTo(Object a) {
-        return false;
+    public boolean compareTo(Produccion produccion) {
+
+        return this.duracion == produccion.getDuracion();
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "titulo='" + titulo + '\'' +
+                ", duracion=" + duracion +
+                ", estatus=" + estatus +
+                '}';
     }
 }

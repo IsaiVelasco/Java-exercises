@@ -41,4 +41,14 @@ public class Videojuego extends Produccion{
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
     }
+
+    @Override
+    public String toString() {
+        return "Videojuego{" +
+                super.toString()+
+                "genero=" + genero +
+                ", compañía='" + compañía + '\'' +
+                ", entregado=" + entregado +
+                '}';
+    }
 }
